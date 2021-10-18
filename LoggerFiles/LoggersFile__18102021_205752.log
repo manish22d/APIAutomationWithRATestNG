@@ -1,0 +1,10 @@
+2021-10-18 20:57:52,577  INFO [main] Class:22 - initialized baseClass
+2021-10-18 20:57:53,023  INFO [main] Class:27 - Setting Endpoint to : /item/{itemId}
+2021-10-18 20:57:53,025  INFO [main] Class:22 - initialized baseClass
+2021-10-18 20:57:53,025  INFO [main] Class:27 - Setting Endpoint to : /auth
+2021-10-18 20:57:53,026  INFO [main] Class:32 - updating header  : Accept with application/json
+2021-10-18 20:57:53,026  INFO [main] Class:32 - updating header  : Content-Type with application/json
+2021-10-18 20:57:54,186  INFO [main] Class:32 - updating header  : Authorization with JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzQ1NzExNzQsImlhdCI6MTYzNDU3MDg3NCwibmJmIjoxNjM0NTcwODc0LCJpZGVudGl0eSI6MX0.WvGltfbOuydKPmQ9gqvfNTEF12VMkCtmTY3pbfws7xw
+2021-10-18 20:57:54,187  INFO [main] Class:37 - updating path param  : itemId to test
+2021-10-18 20:57:54,248  INFO [main] Class:22 - initialized baseClass
+2021-10-18 20:57:54,249  INFO [main] Class:27 - Setting Endpoint to : /items
