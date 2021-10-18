@@ -32,12 +32,9 @@ public class HttpHelper {
 		headers = new HashMap<String, String>();
 		queryParams = new HashMap<String, String>();
 		pathParams = new HashMap<String, String>();
-		RestAssured.baseURI = "http://127.0.0.1:5000";
-//				System.getenv("URL");
+		RestAssured.baseURI = System.getenv("URL");
 		RestAssured.basePath = "";
 
-		System.out.println("manish" + System.getenv("URL"));
-		System.out.println("test" + System.getProperty("URL"));
 //		RestAssured.baseURI = System.getProperty("");
 	}
 

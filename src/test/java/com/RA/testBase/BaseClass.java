@@ -38,13 +38,14 @@ public class BaseClass {
 	@BeforeTest
 	public void setLog4j() {
 		TestUtility.setDateForLog4j();
+		
+		System.out.println(System.getProperty("user"));
 
 		extent = new ExtentReports(
 				System.getProperty("user.dir") + "/AutomationReport/" + TestUtility.getDate() + ".html");
 		extent.addSystemInfo("Host Name", "Windows System");
 		extent.addSystemInfo("User Name", "user");
 		extent.addSystemInfo("Environment", "Automation Test Report");
-
 	}
 
 	@AfterTest
