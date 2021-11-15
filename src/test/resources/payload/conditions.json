@@ -1,0 +1,113 @@
+{
+	"vendorProgramConfig": {
+		"vendor": "",
+		"program": "",
+		"startDate": "",
+		"endDate": "",
+		"programComments": "",
+		"sourceSystem": "",
+		"createUserId": "",
+		"updateUserId": ""
+	},
+	"eligRulesConfig": {
+		"name": "",
+		
+		"actionConfig": {
+			"vapCode": "",
+		
+			"vendor": "",
+		
+			"program": ""
+		},
+		"conditionConfig": {
+			"asoProductIndicator": [
+				"Y",
+				"N"
+			],
+			"cambiaEmployee": "manish",
+			"excludeCambiaEmployee": "",
+			"cambiaRetiree": "",
+			"excludeCambiaRetiree": "",
+			"hca": "",
+			"excludeHca": "",
+			"jointAdmin": [
+				""
+			],
+			"excludeJointAdmin": "",
+			"medicareGroup": [
+				""
+			],
+			"medicareHmo": [
+				""
+			],
+			"medicarePpo": [
+				""
+			],
+			"mediGap": [
+				""
+			],
+			"excludeMediGap": "",
+			"primaryCoverage": [
+				""
+			],
+			"vip": [
+				""
+			],
+			"excludeVipGroups": "",
+			"homeState": [
+				""
+			],
+			"homeCounty": [
+				""
+			],
+			"activeCoverage": false,
+			"vapCodes": [
+				""
+			],
+			"excludeVapCodes": [
+				""
+			],
+			"membershipSystem": [
+				""
+			],
+			"age": 0,
+			"groupId": [
+				""
+			],
+			"excludeGroupId": [
+				""
+			],
+			"classPlanNotMatches": "",
+			"excludeCobInsuranceOrder": [
+				""
+			],
+			"excludeCustomerTypeCode": [
+				""
+			],
+			"customerTypeCode": [
+				""
+			],
+			"excludeInsuranceType": [
+				""
+			],
+			"excludeClassPlan": [
+				""
+			],
+			"excludeClassId": [
+				""
+			],
+			"relationship": [
+				""
+			],
+			"carrier": [
+				""
+			],
+			"miipConditionAlias": [
+				""
+			],
+			"lineOfBusiness": [
+				""
+			]
+		}
+	}
+}
