@@ -39,6 +39,7 @@ public class BaseClass {
 	public static ExtentTest extentTest;
 	public static Logger log;
 	String query = "";
+	String completeQuery = "";
 
 	@BeforeTest
 	public void setLog4j() {
@@ -61,15 +62,15 @@ public class BaseClass {
 		JsonObject conditions = JsonParser.parseString(file.readJson("conditions.json")).getAsJsonObject();
 		conditions.getAsJsonObject("eligRulesConfig").getAsJsonObject("conditionConfig").entrySet()
 				.forEach(condition -> {
-					
-					String queryInConfig = queryConfig
-							.getString(condition.getKey() + "-" + condition.getValue().toString());
-					query = (condition.getValue().toString().isEmpty()) ? ""
-							: query + " and " + String.format(queryInConfig, condition.getValue());
-					System.out.println(condition.getKey());
-
+					String queryInConfig = (condition.getValue().toString().contains("Y"))
+							? queryConfig.getString(condition.getKey() + "-Y")
+							: (condition.getValue().toString().contains("N"))
+									? queryConfig.getString(condition.getKey() + "-N")
+									: "";
+					query += (queryInConfig.isEmpty() ? "" : " and " + queryInConfig);
 				});
-		System.out.println(query.substring(5));
+		query = file.readJson("query.sql") + "where " + query.substring(5);
+		System.out.println(query);
 	}
 
 	@AfterTest
