@@ -1,17 +1,20 @@
 package com.RA.util;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import com.RA.Constant.Constants;
+import com.RA.testBase.TestBase;
 
 /**
  * Utility class, methods are accessible directly
@@ -24,7 +27,7 @@ public class TestUtility {
 	public static Workbook book;
 	public static Sheet sheet;
 	public static Properties property;
-	public static Logger log = Logger.getLogger(TestUtility.class.getClass());
+	public Logger log = LogManager.getLogger(TestBase.class.getClass());
 
 	
 
@@ -52,7 +55,11 @@ public class TestUtility {
 	public static void setDateForLog4j() {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("_ddMMyyyy_HHmmss");
 		System.setProperty("current_date", dateFormat.format(new Date()));
-		PropertyConfigurator.configure("./src/main/resources/log4j.properties");
+//		PropertyConfigurator.configure("./src/main/resources/log4j.properties");
+		String        fileName = "./src/main/resources/log4j.xml";
+        LoggerContext context  = (LoggerContext)LogManager.getContext(false);
+
+        context.setConfigLocation(new File(fileName).toURI());
 	}
 
 	/**

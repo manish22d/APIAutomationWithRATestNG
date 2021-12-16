@@ -9,12 +9,14 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import com.RA.Constant.Constants;
+import com.RA.testBase.TestBase;
 
 /**
  * Helper class for all excel related operation
@@ -27,7 +29,7 @@ public class ExcelUtility {
 	public Workbook book;
 	public Sheet sheet;
 	public Properties property;
-	public Logger log = Logger.getLogger(ExcelUtility.class.getClass());
+	public Logger log = LogManager.getLogger(TestBase.class.getClass());
 
 	public ExcelUtility() {
 		try {
