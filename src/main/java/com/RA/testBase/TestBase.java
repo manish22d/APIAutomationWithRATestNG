@@ -1,7 +1,6 @@
 package com.RA.testBase;
 
 import org.apache.log4j.Logger;
-import org.springframework.stereotype.Component;
 
 import com.RA.httpMethods.HttpHelper;
 
@@ -12,7 +11,7 @@ import com.RA.httpMethods.HttpHelper;
  * @author Manish
  *
  */
-@Component
+
 public class TestBase {
 
 	HttpHelper httpHelper;
