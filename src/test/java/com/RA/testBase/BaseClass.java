@@ -1,12 +1,13 @@
 package com.RA.testBase;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Properties;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.log4testng.Logger;
 
 import com.RA.httpMethods.Request;
@@ -41,8 +42,8 @@ public class BaseClass {
 	String query = "";
 	String completeQuery = "";
 
-	@BeforeTest
-	public void setLog4j() {
+	@BeforeSuite
+	public void setLog4j() throws IOException, URISyntaxException {
 		TestUtility.setDateForLog4j();
 
 		System.out.println(System.getProperty("user"));
@@ -52,7 +53,7 @@ public class BaseClass {
 		extent.addSystemInfo("Host Name", "Windows System");
 		extent.addSystemInfo("User Name", "user");
 		extent.addSystemInfo("Environment", "Automation Test Report");
-		makeQuery();
+//		makeQuery();
 
 	}
 

@@ -143,10 +143,19 @@
 		</dependency>
 
 		<dependency>
-
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq-meta-extensions</artifactId>
 			<version>3.15.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.6</version>
 		</dependency>
 
 	</dependencies>

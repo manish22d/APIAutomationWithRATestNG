@@ -1,0 +1,252 @@
+{
+	"vendorExtractConfigId": 218,
+	"vendorName": "LIVONGO",
+	"programName": "IBEW",
+	"extractType": "ELIG",
+	"deltaRunMode": "RUN_DATE",
+	"historyLookBackMonths": 0,
+	"runOutMonths": 0,
+	"hashAlgorithm": "SHA-256",
+	"dateFormat": "yyyyMMdd",
+	"memberIdentificationMode": "JOB_START_DATE",
+	"extractFilterConfigs": [
+		{
+			"extractFilterConfigId": 397,
+			"queryType": "ELIGIBILITY_DRIVING",
+			"tableAlias": "MEPE",
+			"fieldName": "CSPD_CAT",
+			"fieldValue": {
+				"fieldValue": [
+					"M"
+				]
+			},
+			"operator": "EQ",
+			"fieldType": "STRING",
+			"createUserId": "SYSTEM",
+			"createDate": "2022-01-14 09:45:51"
+		}
+	],
+	"createUserId": "SYSTEM",
+	"createDate": "2022-01-14 09:45:51",
+	"fileConfigModelsMap": {
+		"vendor": {
+			"filePath": "/opt/nas/deft_nonprod/ppmo/to_livongo_IBEW/vendor/land/",
+			"archivalPath": [
+				"/opt/nas/deft_nonprod/ppmo/to_livongo_IBEW/vendor/archive/"
+			],
+			"fileNameFormat": "LivongoIBEW_Automation_(JobStartTime_yyyyMMddHHmmss)",
+			"fileExtn": "txt",
+			"fieldDelimiter": "|",
+			"eolFormatter": "DOS",
+			"includeHeader": true,
+			"includeFooter": false,
+			"fieldsConfig": {
+				"1": {
+					"sourceFieldName": "UniqueMemberID",
+					"targetFieldName": "MemberID",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"2": {
+					"sourceFieldName": "ITSPrefix",
+					"targetFieldName": "ITSPrefix",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"3": {
+					"sourceFieldName": "SubscriberID",
+					"targetFieldName": "MemberDOB",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"4": {
+					"sourceFieldName": "DependentCode",
+					"targetFieldName": "Gender",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"5": {
+					"sourceFieldName": "SubscriberCk",
+					"targetFieldName": "AddressLine1",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"6": {
+					"sourceFieldName": "MemberContrivedKey",
+					"targetFieldName": "AddressLine2",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"7": {
+					"sourceFieldName": "EligibleFromDt",
+					"targetFieldName": "City",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"8": {
+					"sourceFieldName": "EligibleThruDt",
+					"targetFieldName": "State",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"9": {
+					"sourceFieldName": "LastUpdatedDate",
+					"targetFieldName": "Zip",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"10": {
+					"sourceFieldName": "MemberEligExplanationCode",
+					"targetFieldName": "EffectiveDate",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"11": {
+					"sourceFieldName": "MemberEligExplanationDescription",
+					"targetFieldName": "TeminationDate",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"12": {
+					"sourceFieldName": "ParentGroupName",
+					"targetFieldName": "MemberMidInitial",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"13": {
+					"sourceFieldName": "ParentGroupId",
+					"targetFieldName": "WorkEmail",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"14": {
+					"sourceFieldName": "GroupID",
+					"targetFieldName": "HomeEmail",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"15": {
+					"sourceFieldName": "SubGroupName",
+					"targetFieldName": "MemberLastName",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"16": {
+					"sourceFieldName": "MemberSSN",
+					"targetFieldName": "MemberFirstName",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"17": {
+					"sourceFieldName": "MemberLastName",
+					"targetFieldName": "Phone",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"18": {
+					"sourceFieldName": "MemberFirstName",
+					"targetFieldName": "LineofBusinessName",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"19": {
+					"sourceFieldName": "MemberMidInitial",
+					"targetFieldName": "GroupId",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"20": {
+					"sourceFieldName": "MemberTitle",
+					"targetFieldName": "SubscriberID",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"21": {
+					"sourceFieldName": "MemberDOB",
+					"targetFieldName": "Relationship",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"22": {
+					"sourceFieldName": "Gender",
+					"targetFieldName": "COB",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"23": {
+					"sourceFieldName": "Relationship",
+					"targetFieldName": "MemberID",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"24": {
+					"sourceFieldName": "RelationshipDescription",
+					"targetFieldName": "GroupName",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"25": {
+					"sourceFieldName": "MaritalStatus",
+					"targetFieldName": "SubGroupId",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"26": {
+					"sourceFieldName": "MEME_MCTR_LANG",
+					"targetFieldName": "SubGroupName",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"27": {
+					"sourceFieldName": "Language",
+					"targetFieldName": "ProgramCode",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				},
+				"28": {
+					"sourceFieldName": "Race",
+					"targetFieldName": "DNCCode",
+					"fieldType": "COPY",
+					"extractField": true,
+					"badDataMessage": false
+				}
+			}
+		},
+		"canonical": {
+			"filePath": "/opt/nas/deft_nonprod/ppmo/to_livongo_IBEW/canonical/membership/flatfile/",
+			"archivalPath": [
+				"/opt/nas/deft_nonprod/ppmo/to_livongo_IBEW/canonical/membership/archive/"
+			],
+			"version": 1,
+			"includeHeader": false,
+			"includeFooter": false
+		}
+	}
+}
