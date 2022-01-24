@@ -2,10 +2,13 @@ package com.RA.testCases;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.lang.reflect.Method;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
@@ -29,7 +32,7 @@ public class PSVTest extends BaseClass{
 	
 	@BeforeClass
 	public void setUpFiles() throws IOException, URISyntaxException {
-		Reader reader = java.nio.file.Files
+		Reader reader = Files
 				.newBufferedReader(Paths.get(ClassLoader.getSystemResource("psv/test.psv").toURI()));
 		CSVParser parser = new CSVParserBuilder().withSeparator('|').withIgnoreQuotations(true).build();
 
@@ -72,9 +75,24 @@ public class PSVTest extends BaseClass{
 		FTPUtils ftp = new FTPUtils();
 		ftp.connect();
 		
-		System.out.println(ftp.listDir("/"));
-		ftp.changeDirectory("/download");
-		System.out.println(ftp.listDir("/"));
+		System.out.println(ftp.listDir("/download"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(ftp.readFile("/download/version.txt")));
+		try {
+		    StringBuilder sb = new StringBuilder();
+		    String line = br.readLine();
+
+		    while (line != null) {
+		        sb.append(line);
+		        sb.append(System.lineSeparator());
+		        line = br.readLine();
+		    }
+		    String everything = sb.toString();
+		    System.out.println(everything);
+		} finally {
+		    br.close();
+		}
+//		ftp.changeDirectory("/download");
+//		System.out.println(ftp.listDir("/"));
 		ftp.close();
 		
 	}

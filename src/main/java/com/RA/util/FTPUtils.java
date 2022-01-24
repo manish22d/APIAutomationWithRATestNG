@@ -1,8 +1,10 @@
 package com.RA.util;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,7 +45,13 @@ public class FTPUtils {
 
 	public List<String> listDir(String path) throws IOException {
 		FTPFile[] files = ftp.listFiles(path);
+		Arrays.sort(files,
+			    Comparator.comparing((FTPFile remoteFile) -> remoteFile.getTimestamp()).reversed());
 		return Arrays.stream(files).map(FTPFile::getName).collect(Collectors.toList());
+	}
+	
+	public InputStream readFile(String path) throws IOException {
+		return ftp.retrieveFileStream(path);
 	}
 	
 	public void changeDirectory(String path) throws IOException {
